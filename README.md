@@ -18,3 +18,9 @@ Nest JS의 내부
 - $ sudo npm i -g @nestjs/cli
 - $ sudo nest new 생성할 프로젝트 이름
 
+<div align="center">
+ <img width="500" alt="스크린샷 2022-08-25 오후 10 57 28" src="https://user-images.githubusercontent.com/55525574/186684650-28fb9723-3c98-44ef-977a-a94c9931fc06.png">
+  <br>
+  <br><br>
+</div>
+
