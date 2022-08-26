@@ -24,3 +24,7 @@ Nest JS의 내부
   <br><br>
 </div>
 
+1. 제일 처음 main.ts에서 비동기로 NestFactory.create(AppModule)로 AppModule을 생성합니다.
+2. @Module 어노테이션으로 등록된 AppModule에 가보면 controller와 provider가 등록되어 있는데
+3. app.controller에서 @Get 매핑 되어있는 엔드포인트가 @get('/')로 매핑되어있는 getHello 메서드에서 this.appService.getHello()를
+   호출하고, app.service의 getHello() 메서드가 실행되면서 브라우저에 Hello World! 가 찍힙니다.
