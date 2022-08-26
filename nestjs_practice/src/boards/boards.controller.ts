@@ -1,6 +1,8 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { BoardsService } from './boards.service';
 import { Board } from './board.model';
+import { CreateBoardDto } from '../dto/create-board.dto';
+import { BoardStatus } from 'nestjs_practice/dist/boards/board.model';
 
 @Controller('boards')
 export class BoardsController {
@@ -19,11 +21,30 @@ export class BoardsController {
 
     @Post('/')
     createBoard(
-        @Body('title') title : string,
-        @Body('description') description : string,
+        // @Body('title') title : string,
+        // @Body('description') description : string,
+        @Body() createBoardDto : CreateBoardDto
     ) : Board {
-        return this.boardsService.createBoard(title, description);
+        return this.boardsService.createBoard(createBoardDto);
     }
        
+    //?id= abc와 같이 쿼리스트링 데이터는 @Param으로 가져올 수 있습니다.
+    // : board처럼 반환 타입을 명시할 수도 있습니당~~
+    @Get('/:id')
+    getBoardById(@Param('id') id: string): Board {
+        return this.boardsService.getBoardById(id);
+    }
     
+    @Delete('/:id')
+    deleteBoard(@Param('id') id: string) : void {
+        this.boardsService.deleteBoard(id);
+    }
+
+    @Patch('/:id/status')
+    updateBoardStatus(
+        @Param('id') id: string,
+        @Body('status') status: BoardStatus,
+    ){
+        return this.boardsService.updateBoardStatus(id, status)
+    }
 }
