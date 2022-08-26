@@ -28,3 +28,12 @@ Nest JS의 내부
 2. @Module 어노테이션으로 등록된 AppModule에 가보면 controller와 provider가 등록되어 있는데
 3. app.controller에서 @Get 매핑 되어있는 엔드포인트가 @get('/')로 매핑되어있는 getHello 메서드에서 this.appService.getHello()를
    호출하고, app.service의 getHello() 메서드가 실행되면서 브라우저에 Hello World! 가 찍힙니다.
+-----
+
+1. nest g module 모듈이름 -> 새로운 모듈이 생성되면서 module.ts에 자동 등록됩니다.
+2. nest g controller boards --no-spec boards 경로에 controller가 생성 -> module에 controller를 등록해줍니다.
+3. 컨트롤러에서 서비스를 호출하는데 보통 서비스계층이란 컨트롤러에서 데이터의 유효성 체크를 하거나
+   데이터베이스에 아이템을 생성하는 등의 작업을 하는 부분을 처리합니다.
+   마찬가지로 nest g service boards --no-spec 터미널 명령어를 통해 생성할 수 있습니다.
+   @Injectable 데코레이터로 감싸져서 모듈에 제공되며, 서비스 인스턴스는 어플리케이션 전체에서 사용할 수 있습니다. (서비스를 컨트롤러에 종속성 주입)
+   Nest JS에서 의존성 주입은 클래스의 Constructor안에서 이루어집니다.
