@@ -37,3 +37,9 @@ Nest JS의 내부
    마찬가지로 nest g service boards --no-spec 터미널 명령어를 통해 생성할 수 있습니다.
    @Injectable 데코레이터로 감싸져서 모듈에 제공되며, 서비스 인스턴스는 어플리케이션 전체에서 사용할 수 있습니다. (서비스를 컨트롤러에 종속성 주입)
    Nest JS에서 의존성 주입은 클래스의 Constructor안에서 이루어집니다.
+-----
+1. npm install uuid --save
+2. import { v1 as uuid } from 'uuid';
+3. id : uuid -> 유니크한 아이디 생성
+ㅏ
+ㅏ아
