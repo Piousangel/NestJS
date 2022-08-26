@@ -47,3 +47,11 @@ validation check pipe 모듈
 2. $ npm install class-validator class-transformer --save
 3. dto.ts -> import { IsNotEmpty } from "class-validator";
 4. @IsNotEmpty() ~~ to use!
+-----
+1. PostgresSQL, PgAdmin 설치
+2. npm install pg typeorm @nestjs/typeorm --save
+3. @nestjs/typeorm -> NestJS -> TypeORM to use module
+   typeorm -> TypeORM module, pg -> postgres module
+4. nestjs docs <- good subscribe
+5. Create! typeorm config file 
+6. app.module.ts   Import!!!
