@@ -16,7 +16,7 @@ Nest JS의 내부
       프로젝트의 기존 기본 구조가 생성됩니다.
 
 - $ sudo npm i -g @nestjs/cli
-- $ sudo nest new 생성할 프로젝트 이름
+- $ nest new 생성할 프로젝트 이름
 
 <div align="center">
  <img width="500" alt="스크린샷 2022-08-25 오후 10 57 28" src="https://user-images.githubusercontent.com/55525574/186684650-28fb9723-3c98-44ef-977a-a94c9931fc06.png">
@@ -30,7 +30,7 @@ Nest JS의 내부
    호출하고, app.service의 getHello() 메서드가 실행되면서 브라우저에 Hello World! 가 찍힙니다.
 -----
 
-1. nest g module 모듈이름 -> 새로운 모듈이 생성되면서 module.ts에 자동 등록됩니다.
+1. nest g module 모듈이름 -> 새로운 모듈이 생성되면서 module.ts에 자동 등록됩니다. 이것부터 꼭해야합니다...!!
 2. nest g controller boards --no-spec boards 경로에 controller가 생성 -> module에 controller를 등록해줍니다.
 3. 컨트롤러에서 서비스를 호출하는데 보통 서비스계층이란 컨트롤러에서 데이터의 유효성 체크를 하거나
    데이터베이스에 아이템을 생성하는 등의 작업을 하는 부분을 처리합니다.
