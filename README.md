@@ -41,5 +41,9 @@ Nest JS의 내부
 1. npm install uuid --save
 2. import { v1 as uuid } from 'uuid';
 3. id : uuid -> 유니크한 아이디 생성
-ㅏ
-ㅏ아
+-----
+validation check pipe 모듈
+1. class-validator, class-transformer
+2. $ npm install class-validator class-transformer --save
+3. dto.ts -> import { IsNotEmpty } from "class-validator";
+4. @IsNotEmpty() ~~ to use!
