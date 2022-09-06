@@ -55,3 +55,32 @@ validation check pipe 모듈
 4. nestjs docs <- good subscribe
 5. Create! typeorm config file 
 6. app.module.ts   Import!!!
+-----
+
+npm install  @nestjs/config
+npm i --save dotenv
+npm i --save-dev @types/dotenv
+
+imports: [
+    ConfigModule.forRoot({
+      envFilePath: `${__dirname}/../env/.${process.env.NODE_ENV}.env`,
+      isGlobal: true,
+    }),
+    TypeOrmModule.forRoot(
+    {
+      type: 'postgres',
+      host: process.env.DB_HOST,
+      port: 5432,
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWD,
+      database: 'testdb',
+      synchronize: true, // local only
+      entities: [User, BossRaidEntity],
+      })
+      ,UsersModule, BossRaidModule, UserRankingModule],
+
+
+- Dynamic Module을 공부하면서 Module을 직접 만들어보시면 알겠지만, 다른 곳에서도 환경 변수를 쉽게 불러와 사용하기 위해서 ConfigModule을 global module로 만들 수 있음
+- ConfigModule.forRoot({
+-   isGlobal: true,
+- });
