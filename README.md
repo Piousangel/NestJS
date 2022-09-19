@@ -84,3 +84,12 @@ imports: [
 - ConfigModule.forRoot({
 -   isGlobal: true,
 - });
+
+- brew install postgresql 
+- brew services start postgresql
+- postgres -V
+- psql postgres
+- \du
+- create database testdb;
+- alter user testuser createdb
+- \dt
